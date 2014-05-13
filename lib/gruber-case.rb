@@ -46,7 +46,7 @@ class String
         result
       end.join(" ")
       s.gsub!(/['’]\w/io) { |w| w.upcase }
-      s.gsub!(/(\s#{small_re}\s)/io) { |w| w.downcase }
+      s.gsub!(/(\s(#{small_re})\s)/io) { |w| w.downcase }
       s
     end
 end
