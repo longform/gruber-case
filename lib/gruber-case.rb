@@ -45,8 +45,8 @@ class String
         result.upcase! if result =~ /([a-z]\.){1,3}/i
         result
       end.join(" ")
-      s.gsub!(/'\w/io) { |w| w.upcase }
-      s.gsub!(/\b(#{small_re})\b/io) { |w| w.downcase }
+      s.gsub!(/['’]\w/io) { |w| w.upcase }
+      s.gsub!(/(\s#{small_re}\s)/io) { |w| w.downcase }
       s
     end
 end
